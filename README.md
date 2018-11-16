@@ -7,10 +7,10 @@ default config. Built on Alpine Linux.
 * ffmpeg 4.1 (compiled from source)
 * Default nginx config (See: [nginx.conf](nginx.conf))
 
-[![Docker Stars](https://img.shields.io/docker/stars/alfg/nginx-rtmp.svg)](https://hub.docker.com/r/alfg/nginx-rtmp/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alfg/nginx-rtmp.svg)](https://hub.docker.com/r/alfg/nginx-rtmp/)
-[![Docker Automated build](https://img.shields.io/docker/automated/alfg/nginx-rtmp.svg)](https://hub.docker.com/r/alfg/nginx-rtmp/builds/)
-[![Build Status](https://travis-ci.org/alfg/docker-nginx-rtmp.svg?branch=master)](https://travis-ci.org/alfg/docker-nginx-rtmp)
+[![Docker Stars](https://img.shields.io/docker/stars/77phnet/nginx-rtmp.svg)](https://hub.docker.com/r/77phnet/nginx-rtmp/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/77phnet/nginx-rtmp.svg)](https://hub.docker.com/r/77phnet/nginx-rtmp/)
+[![Docker Automated build](https://img.shields.io/docker/automated/77phnet/nginx-rtmp.svg)](https://hub.docker.com/r/77phnet/nginx-rtmp/builds/)
+[![Build Status](https://travis-ci.org/alfg/docker-nginx-rtmp.svg?branch=master)](https://travis-ci.org/77phnet/docker-nginx-rtmp)
 
 ## Usage
 
