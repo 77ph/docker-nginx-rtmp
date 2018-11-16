@@ -29,26 +29,35 @@ sudo docker run -it -p 1935:1935 -p 8080:80 --rm nginx-rtmp
 ```
 
 * Config nginx & run:
-Get config:
+* Get config:
+```
 mkdir -p /opt/nginx
 sudo docker pull 77phnet/nginx-rtmp
 sudo docker run -d -p 1935:1935 -p 8080:80 --name tmp-nginx-container --rm 77phnet/nginx-rtmp
 sudo docker cp tmp-nginx-container:/opt/nginx/nginx.conf /opt/nginx/nginx.conf
 sudo docker rm -f tmp-nginx-container
+```
 
-Edit:
+* Edit:
+```
 vi /opt/nginx/nginx.conf
+```
 
-Run nginx:
+* Run nginx:
+```
 sudo docker run -d -p 1935:1935 -p 8080:80 -v /opt/nginx/nginx.conf:/opt/nginx/nginx.conf --rm nginx-rtmp
+```
 
 * Stream live content to:
 ```
 rtmp://<server ip>:1935/$APP_NAME/$STREAM_NAME
 ```
+```
+* 
+```
 
-
-### FFmpeg Build
+###```
+FFmpeg Build
 ```
 ffmpeg version 4.1 Copyright (c) 2000-2018 the FFmpeg developers
   built with gcc 6.4.0 (Alpine 6.4.0)
