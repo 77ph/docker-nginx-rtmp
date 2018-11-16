@@ -36,11 +36,11 @@ sudo docker run -d -p 1935:1935 -p 8080:80 --name tmp-nginx-container --rm 77phn
 sudo docker cp tmp-nginx-container:/opt/nginx/nginx.conf /opt/nginx/nginx.conf
 sudo docker rm -f tmp-nginx-container
 ```
-** Edit:
+Edit:
 ```
 vi /opt/nginx/nginx.conf
 ```
-** Run nginx:
+Run nginx:
 ```
 sudo docker run -d -p 1935:1935 -p 8080:80 -v /opt/nginx/nginx.conf:/opt/nginx/nginx.conf --rm nginx-rtmp
 ```
