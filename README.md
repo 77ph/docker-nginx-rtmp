@@ -17,33 +17,35 @@ default config. Built on Alpine Linux.
 ### Server
 * Pull docker image and run:
 ```
-docker pull 77phnet/nginx-rtmp
-docker run -it -p 1935:1935 -p 8080:80 --rm 77phnet/nginx-rtmp
+sudo docker pull 77phnet/nginx-rtmp
+sudo docker run -it -p 1935:1935 -p 8080:80 --rm 77phnet/nginx-rtmp
 ```
 or 
 
 * Build and run container from source:
 ```
-docker build -t nginx-rtmp .
-docker run -it -p 1935:1935 -p 8080:80 --rm nginx-rtmp
+sudo docker build -t nginx-rtmp .
+sudo docker run -it -p 1935:1935 -p 8080:80 --rm nginx-rtmp
 ```
+
+* Config nginx & run:
+Get config:
+mkdir -p /opt/nginx
+sudo docker pull 77phnet/nginx-rtmp
+sudo docker run -d -p 1935:1935 -p 8080:80 --name tmp-nginx-container --rm 77phnet/nginx-rtmp
+sudo docker cp tmp-nginx-container:/opt/nginx/nginx.conf /opt/nginx/nginx.conf
+sudo docker rm -f tmp-nginx-container
+
+Edit:
+vi /opt/nginx/nginx.conf
+
+Run nginx:
+sudo docker run -d -p 1935:1935 -p 8080:80 -v /opt/nginx/nginx.conf:/opt/nginx/nginx.conf --rm nginx-rtmp
 
 * Stream live content to:
 ```
 rtmp://<server ip>:1935/$APP_NAME/$STREAM_NAME
 ```
-
-### OBS Configuration
-* Stream Type: `Custom Streaming Server`
-* URL: `rtmp://localhost:1935/stream`
-* Stream Key: `hello`
-
-### Watch Stream
-* In Safari, VLC or any HLS player, open:
-```
-http://<server ip>:8080/$APP_NAME/$STREAM_NAME.m3u8
-```
-* Example: `http://localhost:8080/live/hello`
 
 
 ### FFmpeg Build
