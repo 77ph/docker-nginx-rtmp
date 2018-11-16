@@ -17,8 +17,8 @@ default config. Built on Alpine Linux.
 ### Server
 * Pull docker image and run:
 ```
-docker pull alfg/nginx-rtmp
-docker run -it -p 1935:1935 -p 8080:80 --rm alfg/nginx-rtmp
+docker pull 77phnet/nginx-rtmp
+docker run -it -p 1935:1935 -p 8080:80 --rm 77phnet/nginx-rtmp
 ```
 or 
 
@@ -30,7 +30,7 @@ docker run -it -p 1935:1935 -p 8080:80 --rm nginx-rtmp
 
 * Stream live content to:
 ```
-rtmp://<server ip>:1935/stream/$STREAM_NAME
+rtmp://<server ip>:1935/$APP_NAME/$STREAM_NAME
 ```
 
 ### OBS Configuration
@@ -41,7 +41,7 @@ rtmp://<server ip>:1935/stream/$STREAM_NAME
 ### Watch Stream
 * In Safari, VLC or any HLS player, open:
 ```
-http://<server ip>:8080/live/$STREAM_NAME.m3u8
+http://<server ip>:8080/$APP_NAME/$STREAM_NAME.m3u8
 ```
 * Example: `http://localhost:8080/live/hello`
 
